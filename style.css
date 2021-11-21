@@ -1,0 +1,223 @@
+:root {
+    /* Text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* Background */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /* Text */
+    --very-dark-graysh-blue: hsl(237, 12%, 33%);
+    --dark-graysh-blue: hsl(240, 6%, 50%);
+    /* Divider */
+    --light-graysh-blue: hsl(240, 5%, 91%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 1rem 0;
+    min-height: 100vh;
+    font-size: 16px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background-image: linear-gradient(
+        var(--soft-violet),
+        var(--soft-blue)
+    );
+    color: var(--very-dark-desaturated-blue);
+}
+
+h1 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+    flex-direction: column;
+}
+
+.card {
+    background: white;
+    padding: 2.875rem 1.5rem;
+    margin: 1rem;
+    border-radius: 1.25rem;
+    max-width: 56.25rem;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center 0%;
+    background-size: 14.375rem;
+    font-size: 12px;
+}
+
+.card-box {
+    display: none;
+}
+
+.card-img {
+    position: relative;
+}
+
+.mobile {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-width: 14.375rem;
+    top: -9.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.desktop {
+    display: none;
+}
+
+.card-text {
+    padding-top: 5.625rem;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--light-graysh-blue);
+    padding-top: 1rem;
+}
+
+.accordion-item h2 {
+    margin-bottom: 0;
+}
+
+.question {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0;
+    text-align: left;
+    border: none;
+    background: transparent;
+    font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+.question::after {
+    display: block;
+    width: 0.625rem;
+    height: 1rem;
+    content: "";
+    background-image: url(images/icon-arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transition: transform 300ms ease-in-out;
+}
+
+.question:hover {
+    color: var(--soft-red);
+    cursor: pointer;
+}
+
+.content {
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: var(--very-dark-graysh-blue);
+    line-height: 1.2rem;
+}
+
+.open {
+    font-weight: bold;
+}
+
+.question.open::after {
+    transform: rotate(180deg);
+}
+
+.collapse {
+    transition: all 300ms ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+
+/* DESKTOP STYLING */
+@media (min-width: 56.25rem) {
+    .body {
+        padding: 5rem;
+    } 
+
+    h1 {
+        text-align: left;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        margin: 0 auto;
+        padding: 4.375rem 6.25rem 4.375rem 0;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-x: -30rem;
+        background-position-y: -11.25rem;
+    }
+
+    .card-box {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 57%;
+        transform: translateX(-48%) translateY(-50%);
+        z-index: 2;
+        transition: transform 300ms ease-in-out;
+    }
+
+    .box-open {
+        transform: translateX(-60%) translateY(-50%);
+    }
+
+    .card-img {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        overflow: hidden;
+        padding-right: 10rem;
+        z-index: 1;
+    }
+
+    .desktop {
+        display: block;
+        transform: translateX(-4rem);
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .card-text {
+        flex: 1;
+        padding: 0;
+    }
+}
+
+/* ATTRIBUITION */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin: 1em;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
