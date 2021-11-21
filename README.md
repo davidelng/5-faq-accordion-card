@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://github.com/davidelng/5-faq-accordion-card)
+- [Live Site URL](https://davidelng.github.io/5-faq-accordion-card/)
 
 ## My process
 
@@ -48,7 +48,7 @@ Users should be able to:
 ### What I learned
 
 - Better usage of rem instead of pixel
-- 
+- How to make an accordion!
 
 ### Useful resources
 
